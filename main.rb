@@ -5,17 +5,19 @@ class WorldCupApp
 		puts 'Welcome to the world cup app'
 		@groupA = Group.new('A')
 		@groupB = Group.new('B')
-		# binding.pry
 		@groupC = Group.new('C')
 
+		@player1 = @groupA.add('team1')
+
+	
 	end
 end
 
 
 class Group
-	def initialize(name)
-		@name = name
-		puts @name
+	def initialize(group_name)
+		@group_name = group_name
+		puts 'Group ' + @group_name
 		@teams = []
 	end
 
@@ -25,15 +27,29 @@ class Group
 
 end
 
+
 class Team
 	def initialize
-		puts 'team'
+		@player = player
+		puts @player
+		@players = []
 	end
+
+	def add(player)
+		@players.append(player)
+	end
+	
 end
 
 
-
-
-
+class Players
+	def initialize
+		puts 'player'
+	end
+end
 
 myWorldCupApp = WorldCupApp.new
+
+
+
+
